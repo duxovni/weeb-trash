@@ -1,19 +1,44 @@
 <html>
   <head>
+    <meta charset="utf-8">
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <title>2Dating</title>
+    <style type="text/css">
+      img#photo { height: 400px; }
+      body { text-align:center; }
+    </style>
     <script src="js/yuri-data.js"></script>
     <script src="js/name-data.js"></script>
-    <script src="js/markov.js"></script>
+    <script src="js/image-src-data.js"></script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <script src="js/weeb-trash.js"></script>
   </head>
   <body>
-    <h1>Yuri Bot v0.1</h1>
-    <button onclick="new_name()">Name your waifu</button>
-    <p><b>Name:</b> <span id=name></span></p>
-    <button onclick="talk()">Talk yuri to me</button>
-    <p id="dialogue"></p>
+    <div class="container">
+    <div class="row"><h1>2Dating</h1></div>
+    <div class="row"><p><img id="photo"/><p></div>
+    <div class="row"><p id="name"></p></div>
+    <div class="row"><p><button onclick="new_waifu()">Find a new waifu</button><p></div>
+    <div class="row"><p><button onclick="talk()">Talk yuri to me</button></p></div>
+    <div class="row"><p id="dialogue"></p></div>
 
-    <div style="width:300px;vertical-align:top;font-family: Arial;font-size:9pt;line-height: normal">
-<a rel="license" href="//responsivevoice.org/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/120x31.png" style="float:left;padding-right:2px" /></a><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title"><a href="//responsivevoice.org/" target="_blank" title="ResponsiveVoice Text To Speech">ResponsiveVoice</a></span> used under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License">Non-Commercial License</a></div>
-    <div style="clear:both;">&nbsp;</div>
+    <div class="row">
+      <a rel="license" href="//responsivevoice.org/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/120x31.png"/></a>
+    </div>
+    <div class="row">
+      <span xmlns:dct="https://purl.org/dc/terms/" property="dct:title"><a href="//responsivevoice.org/" target="_blank" title="ResponsiveVoice Text To Speech">ResponsiveVoice</a></span> used under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License">Non-Commercial License</a>
+    </div>
+    </div>
   </body>
 </html>

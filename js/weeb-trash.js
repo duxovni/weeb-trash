@@ -84,6 +84,7 @@ function generate_name() {
     return markov_word(last) + ' ' + markov_word(first) + '-' + honorifics[Math.floor(Math.random()*honorifics.length)];
 }
 
-function new_name() {
+function new_waifu() {
+    document.getElementById("photo").src = imgs[Math.floor(Math.random()*imgs.length)];
     document.getElementById("name").textContent = generate_name();
 }
