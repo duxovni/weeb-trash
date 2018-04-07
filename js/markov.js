@@ -1,6 +1,6 @@
 var chain_size = 1;
 
-function generate() {
+function generate_dialogue() {
     var ngram = ['START'];
     var output = [];
     var word = '';
@@ -45,7 +45,45 @@ function generate() {
 }
 
 function talk() {
-    var line = generate();
-    document.getElementById("dialogue").textContent = line;
-    responsiveVoice.speak(line, "Japanese Female");
+    var dialogue = generate_dialogue();
+    document.getElementById("dialogue").textContent = dialogue;
+    responsiveVoice.speak(dialogue, "Japanese Female");
+}
+
+function markov_word(chain) {
+    var keys = [];
+    for (var el in chain) {
+        if (chain.hasOwnProperty(el)) {
+            keys.push(el);
+        }
+    }
+
+    var word1 = keys[Math.floor(Math.random()*keys.length)];
+
+    var stop = 50;
+
+    while (word1[0] === '.' || word1[1] === '.') {
+	word1 = keys[Math.floor(Math.random()*keys.length)];
+    }
+
+    message = word1.charAt(0).toUpperCase() + word1.slice(1);
+
+    while (true) {
+        var word2 = chain[word1][Math.floor(Math.random()*chain[word1].length)];
+	if (word2 === '.') {
+	    break;
+	}
+        word1 = word1[1]+word2;
+        message += word2;
+    }
+
+    return message;
+}
+
+function generate_name() {
+    return markov_word(last) + ' ' + markov_word(first) + '-' + honorifics[Math.floor(Math.random()*honorifics.length)];
+}
+
+function new_name() {
+    document.getElementById("name").textContent = generate_name();
 }

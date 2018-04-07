@@ -1,11 +1,14 @@
 <html>
   <head>
     <script src="js/yuri-data.js"></script>
+    <script src="js/name-data.js"></script>
     <script src="js/markov.js"></script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
   </head>
   <body>
     <h1>Yuri Bot v0.1</h1>
+    <button onclick="new_name()">Name your waifu</button>
+    <p><b>Name:</b> <span id=name></span></p>
     <button onclick="talk()">Talk yuri to me</button>
     <p id="dialogue"></p>
 
